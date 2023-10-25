@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_tds_user,bi_expence _dedection_tds.account.tds,model_account_tds,base.group_user,1,1,1,1
+access_account_tds_setup_line_user,bi_expence_dedection_tds.account.tds.setup.line,model_account_tds_setup_line,base.group_user,1,1,1,1
+access_account_tds_setup_user,bi_expence_dedection_tds.account.tds.setup,model_account_tds_setup,base.group_user,1,1,1,1
+access_account_tds_line_user,bi_expence_dedection_tds.account.tds.line,model_account_tds_line,base.group_user,1,1,1,1

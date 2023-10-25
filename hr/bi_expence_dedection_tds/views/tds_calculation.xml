@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+        <record id="tds_calculation_expence" model="ir.ui.view">
+            <field name="name">tds_calculation_expence</field>
+            <field name="model">account.tds</field>
+            <field name="arch" type="xml">
+                <form string="Loan Allocation">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="Gross_salary"/>
+                                <field name='tds_amount'/>
+
+                            </group>
+                            <group>
+                                <field name='Gross_salary_month'/>
+                                <field name='tds_amount_month'/>
+                                <field name='expense'/>
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    <sheet string="Tax slab">
+                        <group>
+                            <group>
+                                <field name="year_connection_id"/>
+                                <field name="yearly_salary"/>
+                            </group>
+                            <group>
+                                <field name='tax'/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string='Tax Line'>
+                                <field name="line_ids">
+                                    <tree editable="bottom"> 
+                                        <field name="amount_from"></field>
+                                        <field name="amount_to"></field>
+                                        <field name="tax_percentage"></field>
+                                    </tree>
+                                </field>        
+                            </page>               
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="tds_calculation_expence_tree" model="ir.ui.view">
+            <field name="name">tds_calculation_expence</field>
+            <field name="model">account.tds</field>
+            <field name="arch" type="xml">
+               <tree>
+                    <field name="employee_id"/>
+                    <field name="Gross_salary"/>
+                    <field name='tds_amount'/>
+               </tree>
+            </field>
+        </record>
+
+        <record id="tds_calculation_expence_action" model="ir.actions.act_window">
+            <field name="name">tds_calculation_expence</field>
+            <field name="res_model">account.tds</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="tds_calculation_expence_menu"
+            name="Tds calculation expence"
+            action="tds_calculation_expence_action"
+            sequence="31"
+        />
+        
+
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="0">
+
+        <record id="hr_new_rule_set" model="hr.salary.rule">
+            <field name="name">EMI</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">EMI100</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.pay_slip</field>
+            <field name="struct_id" ref="hr_payroll.structure_002"/>
+        </record>
+
+        <record id="input_deduction" model="hr.payslip.input.type">
+            <field name="name">New Loan</field>
+            <field name="code">LOAN100</field>
+            <field name="country_id" eval="False"/>
+           
+        </record>
+
+
+        <record id="hr_new_rule_set1" model="hr.salary.rule">
+            <field name="name">Over Time</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">OVT100</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OVT100.amount</field>
+            <field name="struct_id" ref="hr_payroll.structure_002"/>
+        </record>
+
+        <record id="input_deduction1" model="hr.payslip.input.type">
+            <field name="name">OverTime</field>
+            <field name="code">OVT100</field>
+            <field name="country_id" eval="False"/>
+           
+        </record>
+        <record id="input_deduction1pf" model="hr.payslip.input.type">
+            <field name="name">PF</field>
+            <field name="code">PF</field>
+            <field name="country_id" eval="False"/>
+           
+        </record>
+    </data>
+
+</odoo>

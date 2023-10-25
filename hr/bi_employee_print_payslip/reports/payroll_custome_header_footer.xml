@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="custom_session_header_footer_pdf_payroll">
+
+        
+        <div class="header">
+            <img class="img img-responsive" src="/bi_employee_print_payslip/static/discription/img/1628078198_WhatsApp Image 2021-08-04 at 17.11.07.jpeg(1).jpg" style="max-height: 400px; width: 20%; margin-left:70%;"/>        </div>
+        <div class="articale o_report_layout_standard">
+            <t t-out="0"/>
+        </div>
+        
+        <div class="footer">
+            <!-- <div class="text-center" style="border-top: 4px solid #201577;">
+                Page <span class="page"/> of <span class="topage"/>
+            </div> -->
+        </div>
+    </template>
+</odoo>

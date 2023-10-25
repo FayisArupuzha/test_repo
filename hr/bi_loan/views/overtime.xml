@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record id="model_name_view_form_overtime" model="ir.ui.view">
+            <field name="name">Over time</field>
+            <field name="model">overtime</field>
+            <field name="arch" type="xml">
+                <form string="Over time">
+                    <header>
+                        <button name="installment_1" string="Approved Button" class="oe_highlight" type="object"/>
+                        <!-- <button name="set_draft" string="Back to Draft" class="oe_highlight" type="object" attrs="{'invisible':[('state', '=', 'draft')]}"/> -->
+
+                        <!-- <field name="state" widget="statusbar" statusbar_visible="draft,approved"/> -->
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name='number_of_hour_worked'/>
+                            </group>
+                             <group>
+                                <field name="number_of_hour_days"/>
+                                <field name="date_field"></field>
+                            </group> 
+                        </group>
+                        <notebook>
+                            <page string='Over time ids'>
+                            <field name='overtime_lines_ids'>
+
+                                <tree editable="bottom"> 
+                                    <field name="month"></field>
+                                    <field name="hour"></field>
+                                    <!-- <field name="paid_field"></field> -->
+                                </tree>
+                            </field>        
+                            </page>               
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="model_name_view_tree_overtime1" model="ir.ui.view">
+            <field name="name">Over time</field>
+            <field name="model">overtime</field>
+            <field name="arch" type="xml">
+               <tree>
+                    <field name="employee_id"/>
+                    <field name='number_of_hour_worked'/>
+                    <field name="number_of_hour_days"/>
+                    <field name="date_field"></field>
+                   
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_create_new123" model="ir.actions.act_window">
+            <field name="name">Over time</field>
+            <field name="res_model">overtime</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="menu_view_loan123"
+            name="Over time"
+            action="action_create_new123"
+            parent="hr_payroll.menu_hr_payroll_employees_root"
+            sequence="31"
+        />
+        
+
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="tds_calculation_expence_setup" model="ir.ui.view">
+            <field name="name">account.tds_setup</field>
+            <field name="model">account.tds.setup</field>
+            <field name="arch" type="xml">
+                <form string="Loan Allocation">
+                    <sheet>
+                        <group>
+                            <field name="year"></field>
+                        </group>
+                        <notebook>
+                            <page string='Tax Line'>
+                                <field name="line_ids">
+                                    <tree editable="bottom"> 
+                                        <field name="amount_from"></field>
+                                        <field name="amount_to"></field>
+                                        <field name="tax_percentage"></field>
+                                    </tree>
+                                </field>        
+                            </page>               
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="tds_calculation_expence_tree_setup" model="ir.ui.view">
+            <field name="name">tds_calculation_expence_setup</field>
+            <field name="model">account.tds.setup</field>
+            <field name="arch" type="xml">
+               <tree>
+                    <field name="year"></field>
+               </tree>
+            </field>
+        </record>
+
+        <record id="tds_calculation_expence_action_setup" model="ir.actions.act_window">
+            <field name="name">tds_calculation_expence_action</field>
+            <field name="res_model">account.tds.setup</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="tds_calculation_expence_menu_setup"
+            name="Tds calculation expence Setup"
+            parent="tds_calculation_expence_menu"
+            action="tds_calculation_expence_action_setup"
+            sequence="31"
+        />
+        
+
+    </data>
+</odoo>

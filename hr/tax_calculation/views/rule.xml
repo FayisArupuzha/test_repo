@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="0">
+        <record id="input_deduction1pfnew" model="hr.payslip.input.type">
+            <field name="name">PF</field>
+            <field name="code">PF</field>
+            <field name="country_id" eval="False"/>
+
+        </record>
+
+        <record id="hr_new_rule_set" model="hr.salary.rule">
+            <field name="name">PF</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">PF100</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.pay_slip</field>
+            <field name="struct_id" ref="hr_payroll.structure_002"/>
+        </record>
+
+        <record id="input_deduction1pfnewg" model="hr.payslip.input.type">
+            <field name="name">TDS</field>
+            <field name="code">TDS</field>
+            <field name="country_id" eval="False"/>
+        </record>
+
+        <record id="hr_new_rule_setdee" model="hr.salary.rule">
+            <field name="name">TDS</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">TDS100</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.pay_slip</field>
+            <field name="struct_id" ref="hr_payroll.structure_002"/>
+        </record>
+
+         <record id="work_entry_type_lop" model="hr.work.entry.type">
+            <field name="name">LOP</field>
+            <field name="code">LOP100</field>
+            <field name="is_leave">True</field>
+        </record>
+
+        <record id="hr_new_rule_lop1" model="hr.salary.rule">
+            <field name="name">LOP</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">LOP101</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.pay_slip</field>
+            <field name="struct_id" ref="hr_payroll.structure_002"/>
+        </record>
+
+    </data>
+
+</odoo>
